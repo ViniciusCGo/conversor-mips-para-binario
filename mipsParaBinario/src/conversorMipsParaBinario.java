@@ -200,12 +200,16 @@ public class conversorMipsParaBinario {
                     
                 case "mfhi":
                 	return opBinary + "00000" + "00000" + registerBinary(parts[1]) + "00000" + FUNCT_CODES.get(opcode);
-				/*
-				 * case "mthi": return opBinary + registerBinary(parts[1]) + "00000" + "00000";
-				 * case "mflo": return opBinary + registerBinary(parts[1]) + "00000" + "00000";
-				 * case "mtlo": return opBinary + registerBinary(parts[1]) + "00000" + "00000" ;
-				 */
-                	
+		
+		case "mthi":
+			return opBinary + registerBinary(parts[1]) + "00000" + "00000" + "00000" + FUNCT_CODES.get(opcode);
+				
+		case "mflo": 
+			return opBinary + "00000" + "00000" + registerBinary(parts[1]) + "00000" + FUNCT_CODES.get(opcode);
+				
+		case "mtlo":
+			return opBinary + registerBinary(parts[1]) + "00000" + "00000" + "00000" + FUNCT_CODES.get(opcode);
+
 
                 case "lb":
                 case "lh":
